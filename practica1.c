@@ -306,7 +306,7 @@ Jogador jogadores;
 	}
 
 
-	int vectorJogadores(struct Jogador * jogadores)
+	int vectorJogadores( Jogador * jogadores)
 	{
 		FILE *arquivo;
 		arquivo = fopen("jogadores.txt", "rb");
@@ -336,7 +336,7 @@ Jogador jogador;
 		vectorJogadores(jogadores);
 
 
-		struct Jogador aux;
+		 Jogador aux;
 		int i = 0, j = 0;
 
 		for (i = 0; i < nrDeJogadores; i++)
@@ -360,7 +360,7 @@ Jogador jogador;
 		int idJog = terceiroMaior();
 		int nrDejog = contarJogadores();
 
-		struct Jogador jogadores[nrDejog];
+		 Jogador jogadores[nrDejog];
 		vectorJogadores(jogadores);
 		int t;
 		for (int j = 0; j < nrDejog; j++)
@@ -372,7 +372,7 @@ Jogador jogador;
 			}
 		}
 
-		struct Jogador jog;
+		 Jogador jog;
 
 		FILE *arquivo;
 		arquivo = fopen("jogadores.txt", "w");
@@ -386,7 +386,7 @@ Jogador jogador;
 			if (jogadores[j].id != idJog)
 			{
 				jog = jogadores[j];
-				fwrite(&jog, sizeof (struct Jogador), 1, arquivo);
+				fwrite(&jog, sizeof (Jogador), 1, arquivo);
 			}
 		}
 		printf("Removido com sucesso!");
